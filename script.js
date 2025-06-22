@@ -168,17 +168,25 @@ document.addEventListener('DOMContentLoaded', function() {
       // Ejemplo para Argentina: 5491122334455
       const whatsappNumber = "584247511271"; 
         
-      // Abrir WhatsApp con el mensaje
-  const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+       // Intentar abrir WhatsApp directamente
+  const whatsappLink = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
   
-  // Intentar abrir WhatsApp directamente
-  window.location.href = whatsappLink;
+  // Crear un enlace temporal
+  const link = document.createElement('a');
+  link.href = whatsappLink;
   
-  // Vaciar carrito después de enviar
-  cart.items = [];
-  cart.updateCart();
-  document.getElementById('cart-sidebar').style.transform = 'translateX(100%)';
-  
-  showNotification('✅ Pedido enviado con éxito');
+  // Intentar abrir el enlace
+  const opened = window.open(whatsappLink, '_blank');
+  if (!opened) {
+    // Si no se pudo abrir, mostrar un mensaje
+    alert('🚫 No se pudo abrir WhatsApp. Asegúrate de tener la aplicación instalada.');
+  } else {
+    // Vaciar carrito después de enviar
+    cart.items = [];
+    cart.updateCart();
+    document.getElementById('cart-sidebar').style.transform = 'translateX(100%)';
+    
+    showNotification('✅ Pedido enviado con éxito');
+  }
 })
 });
