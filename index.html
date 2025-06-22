@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceites Motor Premium - Tienda Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-oil-can"></i>
+                    <h1>Aceites Motor Premium</h1>
+                </div>
+                <button id="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección de productos -->
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Productos</h2>
+                
+                <div class="products-grid">
+                    <!-- Producto 1 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1613997677644-35a0aab00a6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Aceite Sintético" class="product-img">
+                        <div class="product-info">
+                            <h3 class="product-title">Aceite Sintético 5W-30</h3>
+                            <p class="product-description">Para motores modernos que exigen máximo rendimiento y protección.</p>
+                            <p class="product-price">$24.99</p>
+                            
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">-</button>
+                                <span id="product-1-quantity" class="quantity">0</span>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            
+                            <button class="add-to-cart" data-id="product-1" data-name="Aceite Sintético 5W-30" data-price="24.99">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Producto 2 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1624552184280-9e9631bbeee9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="Aceite Mineral" class="product-img">
+                        <div class="product-info">
+                            <h3 class="product-title">Aceite Mineral 20W-50</h3>
+                            <p class="product-description">Ideal para motores clásicos y vehículos con alto kilometraje.</p>
+                            <p class="product-price">$18.99</p>
+                            
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">-</button>
+                                <span id="product-2-quantity" class="quantity">0</span>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            
+                            <button class="add-to-cart" data-id="product-2" data-name="Aceite Mineral 20W-50" data-price="18.99">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Producto 3 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Aceite Diesel" class="product-img">
+                        <div class="product-info">
+                            <h3 class="product-title">Aceite Diesel 15W-40</h3>
+                            <p class="product-description">Formulado especialmente para motores diésel de alto rendimiento.</p>
+                            <p class="product-price">$27.99</p>
+                            
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">-</button>
+                                <span id="product-3-quantity" class="quantity">0</span>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            
+                            <button class="add-to-cart" data-id="product-3" data-name="Aceite Diesel 15W-40" data-price="27.99">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Carrito de compras -->
+    <div id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <button id="close-cart">&times;</button>
+        </div>
+        
+        <div id="cart-items"></div>
+        <div id="empty-cart-message">Tu carrito está vacío</div>
+        
+        <div class="cart-totals">
+            <div class="total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="total-row">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="checkout-button">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
